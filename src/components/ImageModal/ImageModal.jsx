@@ -3,12 +3,12 @@ import css from './ImageModal.module.css';
 
 Modal.setAppElement('#root');
 
-export default function ImageModal({ modalIsOpen, image, onClick }) {
+export default function ImageModal({ modalIsOpen, image, onClose }) {
   return (
     <div>
       <Modal
         isOpen={modalIsOpen}
-        onRequestClose={onClick}
+        onRequestClose={onClose}
         shouldCloseOnOverlayClick={true}
         shouldCloseOnEsc={true}
         style={{

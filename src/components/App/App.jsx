@@ -50,16 +50,20 @@ export default function App() {
     setPage(page + 1);
   };
 
-  const handleModal = image => {
+  const handleOpenModal = image => {
     setSelectedImage(image);
     setModalIsOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setModalIsOpen(false);
   };
 
   return (
     <section className={css.page}>
       <SearchBar onSearch={handleSearch} />
       {images.length > 0 && (
-        <ImageGallery items={images} onClick={handleModal} />
+        <ImageGallery items={images} onClick={handleOpenModal} />
       )}
       {error && <ErrorMessage />}
       {isLoading && <Loader />}
@@ -68,7 +72,7 @@ export default function App() {
       )}
       <ImageModal
         modalIsOpen={modalIsOpen}
-        onClick={handleModal}
+        onClose={handleCloseModal}
         image={selectedImage}
       />
     </section>
