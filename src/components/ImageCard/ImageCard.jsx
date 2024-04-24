@@ -6,13 +6,14 @@ export default function ImageCard({
   onClick,
 }) {
   return (
-    <div className={css.wrapper}>
+    <div>
       <img
         className={css.img}
         src={small}
         width="500"
         alt={alt_description}
         onClick={() => onClick(regular)}
+        title="click me!"
       />
     </div>
   );
